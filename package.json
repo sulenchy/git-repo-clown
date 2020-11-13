@@ -1,0 +1,21 @@
+{
+  "name": "githubpageclown",
+  "version": "1.0.0",
+  "description": "Creating a clown of my github profile page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github-graphql-api",
+    "node",
+    "express",
+    "javascript",
+    "css"
+  ],
+  "author": "sulenchy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
