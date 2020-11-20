@@ -17,49 +17,8 @@ app.set('port', process.env.PORT || 3000)
 // app.get('/', routes.index)
 // app.get('/users', user.list)
 
-const { graphql } = require("@octokit/graphql");
+app.use('/client', express.static('public'));
 
-const graphqlWithAuth = graphql.defaults({
-    headers: {
-      authorization: `token 624ce67f41026d19f2134ba859253ec120932788`,
-    },
-  });
-  const { repository } = graphqlWithAuth(`
-    {
-        viewer {
-            login
-            starredRepositories {
-              totalCount
-            }
-            avatarUrl
-            repositories(last: 20) {
-              edges {
-                node {
-                  name
-                  stargazers {
-                    totalCount
-                  }
-                  watchers {
-                    totalCount
-                  }
-                  description
-                  createdAt
-                  languages(first: 10) {
-                    nodes {
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
-    }
-  `).then(res => {
-      console.log('res ===> ', res);
-      return res;
-  }).catch(err => err);
-
-var server = http.createServer(app)
-server.listen(app.get('port'), function () {
+app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'))
 })

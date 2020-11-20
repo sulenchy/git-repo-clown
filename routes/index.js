@@ -11,35 +11,37 @@ router.get('/repositories', function (req, res) {
         },
       });
       graphqlWithAuth(`
-        {
-            viewer {
-                login
-                starredRepositories {
+      {
+        viewer {
+          login
+          starredRepositories {
+            totalCount
+          }
+          avatarUrl
+          bio
+          name
+          repositories(last: 20) {
+            edges {
+              node {
+                name
+                stargazers {
                   totalCount
                 }
-                avatarUrl
-                repositories(last: 20) {
-                  edges {
-                    node {
-                      name
-                      stargazers {
-                        totalCount
-                      }
-                      watchers {
-                        totalCount
-                      }
-                      description
-                      createdAt
-                      languages(first: 10) {
-                        nodes {
-                          name
-                        }
-                      }
-                    }
+                watchers {
+                  totalCount
+                }
+                description
+                createdAt
+                languages(first: 1) {
+                  nodes {
+                    name
                   }
                 }
               }
+            }
+          }
         }
+      }      
       `).then(result => {
           return res.json(result);
         }).catch(err => err);
