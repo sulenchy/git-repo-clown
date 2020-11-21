@@ -4,7 +4,8 @@
   "description": "Creating a clown of my github profile page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node index"
   },
   "keywords": [
     "github-graphql-api",
@@ -19,6 +20,7 @@
     "@octokit/graphql": "4.5.7",
     "body-parser": "1.19.0",
     "express": "4.17.1",
+    "nodemon": "2.0.6",
     "serve-favicon": "2.5.0"
   }
 }
