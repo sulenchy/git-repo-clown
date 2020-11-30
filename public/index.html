@@ -8,7 +8,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is index.html</h1>
+    <div id="root">
+        <!-- header: where the navigation links are -->
+        <aside id="aside">
+            <header id="main-header" class="flex-box-items-center margin-bottom-24">
+                <img id="avatar" alt="sulenchy" class="avatar">
+                <div class="pad-horz-1">
+                    <h1 id="username" class="margin-0">
+                        <span id="fullname" class="fullname">Abudu Abiodun Sulaiman</span>
+                        <span id="nickname" class="nickname">Sulenchy</span>
+                    </h1>
+                </div>
+            </header>
+            
+            <!-- <input type="text" name="status" id="status" placeholder="Set status"> -->
+            <div class="user-profile-bio margin-bottom-16">
+                <span id="user-profile-bio">I am a software engineer and a student of knowledge ...</span>
+            </div>
+        </aside>
+        
+        <!-- Content part -->
+        <article id="article">
+            <div id="tab" class="tab">
+                <button class="tablinks active">Repositories<span title="84" class="Counter ">84</span></button>
+            </div>
+            
+            <div id="tabContent" class="content grey-text">
+                <ul id="repo-list" class="repo-list">
+                
+                </ul>
+            </div>
+        </article>
+    </div>
+    <script src="svg.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

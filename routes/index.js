@@ -32,9 +32,11 @@ router.get('/repositories', function (req, res) {
                 }
                 description
                 createdAt
+                pushedAt
                 languages(first: 1) {
                   nodes {
                     name
+                    color
                   }
                 }
               }
