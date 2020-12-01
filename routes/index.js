@@ -1,15 +1,16 @@
 var express = require('express')
 var router = express.Router()
-
+require('dotenv').config()
 const { graphql } = require("@octokit/graphql");
 
 // define the repository route
 router.get('/repositories', function (req, res) {
     const graphqlWithAuth = graphql.defaults({
         headers: {
-          authorization: `token 624ce67f41026d19f2134ba859253ec120932788`,
+          authorization: `token ${ process.env.TOKEN }`,
         },
       });
+      console.log(process.env.TOKEN)
       graphqlWithAuth(`
       {
         viewer {
